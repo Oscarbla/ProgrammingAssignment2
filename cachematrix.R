@@ -3,7 +3,7 @@
 
 ## This function creates the matrix and does the cache process.
 
-makeMatrix <- function(x = matrix()) {
+makeCacheMatrix <- function(x = matrix()) {
   o <- NULL
   set <- function(y) {
       x <<- y
@@ -22,11 +22,11 @@ makeMatrix <- function(x = matrix()) {
 ## checks if the inverse has already been calculated and gets it from the
 ## cache.
 
-cacheInverse <- function(x, ...) {
+cacheSolve <- function(x, ...) {
   o <- x$getinverse()
   if (!is.null(o)) {
       message("getting cached data")
-      return(i)
+      return(o)
   }
   data <- x$get()
   o <- solve(data, ...)
